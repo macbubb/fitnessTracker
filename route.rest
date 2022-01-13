@@ -1,0 +1,59 @@
+POST http://localhost:3000/api/users/
+Content-Type: application/json
+
+{
+    "username": "Draymond"
+}
+###
+POST http://localhost:3000/api/users HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+username=Draymond
+
+### LIST ALL USERES
+GET http://localhost:3000/api/users/
+
+###
+
+DELETE http://localhost:3000/api/users/
+
+###
+
+DELETE http://localhost:3000/api/users/delete/id/61db4c00728fe70dfe09dd
+
+###
+DELETE http://localhost:3000/api/users/delete/username/Laura
+
+###
+
+POST http://localhost:3000/api/users
+
+Content-Type: application/x-www-form-urlencoded
+{
+    "username": "Ernie"
+}
+
+###
+POST http://localhost:3000/api/users/61ddbe828c07bd6bf9d91c62/exercises/
+Content-Type: application/x-www-form-urlencoded
+
+:_id=61ddbe828c07bd6bf9d91c62
+&description=run
+&duration=45
+
+###
+POST http://localhost:3000/api/users/61ddbe828c07bd6bf9d91c62/exercises HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+###LOG QUERY (PLAIN)
+GET http://localhost:3000/api/users/61ddbe828c07bd6bf9d91c62/logs HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+
+### LOG QUERY WITH DATE PARAMETERS
+GET http://localhost:3000/api/users/61dc6ca897e4f3a3f1c24d4d/logs?from=1989-12-31&to=1990-01-03 HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+### LOG QUERY WITH LIMIT PARAMETER
+GET http://localhost:3000/api/users/61dc6ca897e4f3a3f1c24d4d/logs?limit=4 HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
